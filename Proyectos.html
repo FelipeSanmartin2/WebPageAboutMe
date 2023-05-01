@@ -29,7 +29,6 @@
         }
         body {
             font-family: Roboto Mono ;
-
             background-image: url(https://w0.peakpx.com/wallpaper/438/216/HD-wallpaper-notebook-code-programming-text-dark.jpg);
             background-size:  100% ;
         }    
@@ -99,6 +98,20 @@
         #check {
             display: none;
         }
+        /* section */
+
+        section {
+            display: flex;
+            padding-top: 80px;
+            justify-content: center;
+        }
+
+        .multiplicador {
+            display: flex;
+            flex-direction: column;
+            color: var(--white);
+            align-items: center;
+        }
         @media (max-width: 858px) {
             .checkbtn {
                 display: block;
@@ -143,11 +156,29 @@
         </label>
         <label class="logo">Felipe San Martin</label>
         <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="Proyectos.html">Proyectos</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Proyectos.html" class="active">Proyectos</a></li>
             <li><a href="#">Sobre Mi</a></li>
         </ul>
     </nav>
-    <section></section>
+    <section>
+        <div class="multiplicador">
+            <h2>Multiplicador Simple</h2>
+            <label for="numeroA"> introduce numero A </label>
+            <input type="number" name="" id="numeroA">
+            <label for="numeroB"> introduce numero B </label>
+            <input type="number" name="" id="numeroB">
+            <input type="submit" onclick="multiplicar()" value="resultado">
+            <div class="resultado"></div>
+        <script>
+            function multiplicar() {
+                let resultado = document.querySelector(".resultado");
+                let a = Number(document.getElementById("numeroA").value)
+                let b = Number(document.getElementById("numeroB").value)
+                resultado.innerHTML = "el resultado multiplicado de ambos numeros es " + a * b;
+            }
+        </script>
+        </div>
+    </section>
 </body>
 </html>
