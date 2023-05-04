@@ -1,0 +1,177 @@
+        /* https://www.youtube.com/watch?v=gYbkiakN1HI */
+        :root {
+            --blue: #12d2db;
+            --white: #fcf2fa;
+            --purple: #912a7eaa;
+            --purple-blc: #31325fdd;
+            --shadow: 0 5px 10px 5px rgba(0, 0, 0, .3);
+            --navColor: linear-gradient(to right, rgba(85, 49, 143, 0.6) 5%, rgba(2, 4, 29, 0.9));
+
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Roboto Mono;
+            background-image: url(https://w0.peakpx.com/wallpaper/438/216/HD-wallpaper-notebook-code-programming-text-dark.jpg);
+            background-size: 100%;
+        }
+
+        nav {
+            position: absolute;
+            background: var(--navColor);
+            box-shadow: var(--shadow);
+            height: 80px;
+            width: 100%;
+        }
+
+        label.logo {
+            color: var(--white);
+            font-size: max(16px, min(24px, 4.5vw));
+            line-height: 80px;
+            padding: 0 1em;
+            letter-spacing: -1px;
+            font-weight: 800;
+            font-style: italic;
+            transition: .2s ease;
+            text-shadow: 3px 5px 20px #230622aa;
+        }
+
+        nav ul {
+            float: right;
+            /* metodo para colocar el listado a la derecha */
+            margin-right: 80px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 13px;
+            text-transform: lowercase;
+        }
+
+        a.active,
+        a:hover {
+            background: var(--purple-blc);
+            transition: .5s;
+        }
+
+        .checkbtn {
+            line-height: 80px;
+            font-size: 30px;
+            float: right;
+            cursor: pointer;
+            margin-right: 40px;
+            display: none;
+        }
+
+        .checkbtn i {
+            color: var(--white);
+            padding: 5px;
+            border-radius: 10px;
+            transition: .5s ease;
+        }
+
+        .checkbtn i:hover {
+            background: var(--purple-blc);
+        }
+
+        #check {
+            display: none;
+        }
+
+        /* section */
+
+        section {
+            display: flex;
+            flex-direction: column;
+            padding-top: 80px;
+            justify-content: center;
+        }
+
+        .multiplicador {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            color: var(--white);
+            align-items: center;
+        }
+
+        .numeroPrimo {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            color: var(--white);
+            align-items: center;
+        }
+
+        .numeroPrimo p {
+            width: 300px;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .numeroPrimo label {
+            text-align: center;
+        }
+
+        .resultadoPrimos {
+            word-wrap: break-word;
+        }
+
+        .resultadoPrimos span {
+            display: inline-block;
+            max-width: 400px;
+            /* ajusta el ancho máximo según tus necesidades */
+        }
+
+        @media (max-width: 858px) {
+            .checkbtn {
+                display: block;
+            }
+
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: var(--purple-blc);
+                top: 80px;
+                left: -100%;
+                padding-top: 80px;
+                text-align: center;
+                transition: .5s ease;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 30px 0;
+                line-height: 30px;
+            }
+
+            nav ul li a {
+                font-size: 20px;
+            }
+
+            a.active,
+            a:hover {
+                background: none;
+                color: var(--blue);
+                text-shadow: 0 10px 15px var(--blue);
+            }
+
+            #check:checked~ul {
+                left: 0;
+            }
+
+        }
