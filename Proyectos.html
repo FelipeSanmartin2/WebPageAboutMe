@@ -127,9 +127,16 @@
             font-size: 10px;
             text-align: center;
         }
-        .numeroPrimo label, .resultadoPrimos {
+        .numeroPrimo label {
             text-align: center;
         }
+        .resultadoPrimos {
+            word-wrap: break-word;
+        }
+        .resultadoPrimos span {
+  display: inline-block;
+  max-width: 400px; /* ajusta el ancho máximo según tus necesidades */
+}
         @media (max-width: 858px) {
             .checkbtn {
                 display: block;
@@ -225,7 +232,7 @@
                                 primos.push(i);
                             }
                         }
-                        resultadoPrimos.innerHTML = "Los Valores Primos son " + primos.join(",");
+                        resultadoPrimos.innerHTML = "Los Valores Primos son " + primos.map(num => `<span>${num}</span>`).join(" ,");
                     }
                 }
             </script>
